@@ -15,7 +15,7 @@ data_CIF_TWIN
     _dictionary.title            CIF_TWIN
     _dictionary.class            Instance
     _dictionary.version          3.1
-    _dictionary.date             2016-11-15
+    _dictionary.date             2024-05-15
     _dictionary.uri              www.iucr.org/cif/dic/cif_twin.dic
     _dictionary.ddl_conformance  3.11.09
     _dictionary.namespace        TwinCrys
@@ -31,16 +31,19 @@ save_TWIN_GROUP
     _definition.id               TWIN_GROUP
     _definition.scope            Category
     _definition.class            Head
-    _definition.update           2014-06-20
+    _definition.update           2024-05-15
     _description.text                   
 ;
-
      The TWIN_GROUP data items describe atomic information
      used in crystallographic structure studies.
 ;
     _name.category_id            CIF_TWIN
     _name.object_id              TWIN_GROUP
-    _import.get                  [{"file":"cif_core.dic" "save":"CIF_CORE" "mode":"Full"}]
+    _import.get
+        [
+         {'dupl':Ignore  'file':cif_core.dic  'mode':Full  'save':CIF_CORE_HEAD}
+        ]
+
 save_
 
 
