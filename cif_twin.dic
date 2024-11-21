@@ -13,7 +13,7 @@ data_CIF_TWIN
 
     _dictionary.title             CIF_TWIN
     _dictionary.class             Instance
-    _dictionary.version           3.1
+    _dictionary.version           3.1.0
     _dictionary.date              2024-11-21
     _dictionary.uri               www.iucr.org/cif/dic/cif_twin.dic
     _dictionary.ddl_conformance   4.2.0
@@ -316,6 +316,7 @@ save_twin_individual.mass_fraction_refined
     _type.container               Single
     _type.contents                Real
     _enumeration.range            0:1.0
+    _units.code                   none
 
 save_
 
@@ -374,7 +375,9 @@ save_twin_individual.twin_matrix
     _type.purpose                 Number
     _type.source                  Derived
     _type.container               Matrix
+    _type.dimension               '[3,3]'
     _type.contents                Real
+    _units.code                   none
     _method.purpose               Evaluation
     _method.expression
 ;
@@ -404,6 +407,7 @@ save_twin_individual.twin_matrix_11
     _type.source                  Derived
     _type.container               Single
     _type.contents                Real
+    _units.code                   none
 
 save_
 
@@ -423,6 +427,7 @@ save_twin_individual.twin_matrix_12
     _type.source                  Derived
     _type.container               Single
     _type.contents                Real
+    _units.code                   none
 
 save_
 
@@ -442,6 +447,7 @@ save_twin_individual.twin_matrix_13
     _type.source                  Derived
     _type.container               Single
     _type.contents                Real
+    _units.code                   none
 
 save_
 
@@ -461,6 +467,7 @@ save_twin_individual.twin_matrix_21
     _type.source                  Derived
     _type.container               Single
     _type.contents                Real
+    _units.code                   none
 
 save_
 
@@ -480,6 +487,7 @@ save_twin_individual.twin_matrix_22
     _type.source                  Derived
     _type.container               Single
     _type.contents                Real
+    _units.code                   none
 
 save_
 
@@ -499,6 +507,7 @@ save_twin_individual.twin_matrix_23
     _type.source                  Derived
     _type.container               Single
     _type.contents                Real
+    _units.code                   none
 
 save_
 
@@ -518,6 +527,7 @@ save_twin_individual.twin_matrix_31
     _type.source                  Derived
     _type.container               Single
     _type.contents                Real
+    _units.code                   none
 
 save_
 
@@ -537,6 +547,7 @@ save_twin_individual.twin_matrix_32
     _type.source                  Derived
     _type.container               Single
     _type.contents                Real
+    _units.code                   none
 
 save_
 
@@ -556,6 +567,7 @@ save_twin_individual.twin_matrix_33
     _type.source                  Derived
     _type.container               Single
     _type.contents                Real
+    _units.code                   none
 
 save_
 
@@ -722,6 +734,15 @@ save_twin_refln.f_squared_calc
     _type.source                  Derived
     _type.container               Single
     _type.contents                Real
+    _method.purpose               Definition
+    _method.expression
+;
+    If      (_diffrn_radiation.probe == "neutron")
+                                         _units.code =  "femtometre_squared"
+    Else If (_diffrn_radiation.probe == "electron")
+                                         _units.code =  "volt_squared"
+    Else                                 _units.code =  "electron_squared"
+;
 
 save_
 
@@ -747,6 +768,68 @@ save_twin_refln.f_squared_calc_individual
     _type.source                  Derived
     _type.container               Single
     _type.contents                Real
+    _method.purpose               Definition
+    _method.expression
+;
+    If      (_diffrn_radiation.probe == "neutron")
+                                         _units.code =  "femtometre_squared"
+    Else If (_diffrn_radiation.probe == "electron")
+                                         _units.code =  "volt_squared"
+    Else                                 _units.code =  "electron_squared"
+;
+
+
+save_
+
+save_twin_refln.f_squared_calc_individual_su
+
+    _definition.id                '_twin_refln.F_squared_calc_individual_su'
+    _definition.update            2024-11-21
+    _description.text
+;
+    Standard uncertainty of _twin_refln.F_squared_calc_individual.
+;
+    _name.category_id             twin_refln
+    _name.object_id               F_squared_calc_individual_su
+    _name.linked_item_id          '_twin_refln.F_squared_calc_individual'
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+
+    _method.purpose               Definition
+    _method.expression
+;
+    If      (_diffrn_radiation.probe == "neutron")
+                                         _units.code =  "femtometre_squared"
+    Else If (_diffrn_radiation.probe == "electron")
+                                         _units.code =  "volt_squared"
+    Else                                 _units.code =  "electron_squared"
+;
+
+save_
+
+save_twin_refln.f_squared_calc_su
+
+    _definition.id                '_twin_refln.F_squared_calc_su'
+    _definition.update            2024-11-21
+    _description.text
+;
+    Standard uncertainty of _twin_refln.F_squared_calc.
+;
+    _name.category_id             twin_refln
+    _name.object_id               F_squared_calc_su
+    _name.linked_item_id          '_twin_refln.F_squared_calc'
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+
+    _method.purpose               Definition
+    _method.expression
+;
+    If      (_diffrn_radiation.probe == "neutron")
+                                         _units.code =  "femtometre_squared"
+    Else If (_diffrn_radiation.probe == "electron")
+                                         _units.code =  "volt_squared"
+    Else                                 _units.code =  "electron_squared"
+;
 
 save_
 
@@ -768,12 +851,21 @@ save_twin_refln.f_squared_meas
     _type.source                  Derived
     _type.container               Single
     _type.contents                Real
+    _method.purpose               Definition
+    _method.expression
+;
+    If      (_diffrn_radiation.probe == "neutron")
+                                         _units.code =  "femtometre_squared"
+    Else If (_diffrn_radiation.probe == "electron")
+                                         _units.code =  "volt_squared"
+    Else                                 _units.code =  "electron_squared"
+;
 
 save_
 
-save_twin_refln.f_squared_meas_sigma
+save_twin_refln.f_squared_meas_su
 
-    _definition.id                '_twin_refln.F_squared_meas_sigma'
+    _definition.id                '_twin_refln.F_squared_meas_su'
 
     loop_
       _alias.definition_id
@@ -782,11 +874,11 @@ save_twin_refln.f_squared_meas_sigma
          '_twin_refln.F_squared_sigma'
          '_twin_refln.F_squared_meas_su'
 
-    _definition.update            2014-07-30
+    _definition.update            2024-11-21
     _description.text
 ;
 
-     Standard uncertainty of _twin_refln_F_squared_meas
+     Standard uncertainty of _twin_refln.F_squared_meas
 ;
     _name.category_id             twin_refln
     _name.object_id               F_squared_meas_su
@@ -795,6 +887,15 @@ save_twin_refln.f_squared_meas_sigma
     _type.source                  Related
     _type.container               Single
     _type.contents                Real
+    _method.purpose               Definition
+    _method.expression
+;
+    If      (_diffrn_radiation.probe == "neutron")
+                                         _units.code =  "femtometre_squared"
+    Else If (_diffrn_radiation.probe == "electron")
+                                         _units.code =  "volt_squared"
+    Else                                 _units.code =  "electron_squared"
+;
 
 save_
 
@@ -869,6 +970,7 @@ save_twin_refln.index_h
     _type.source                  Derived
     _type.container               Single
     _type.contents                Integer
+    _units.code                   none
 
 save_
 
@@ -892,6 +994,7 @@ save_twin_refln.index_hkl
     _type.container               Matrix
     _type.dimension               '[3]'
     _type.contents                Integer
+    _units.code                   none
     _method.purpose               Evaluation
     _method.expression
 ;
@@ -918,6 +1021,7 @@ save_twin_refln.index_k
     _type.source                  Derived
     _type.container               Single
     _type.contents                Integer
+    _units.code                   none
 
 save_
 
@@ -937,6 +1041,7 @@ save_twin_refln.index_l
     _type.source                  Derived
     _type.container               Single
     _type.contents                Integer
+    _units.code                   none
 
 save_
 
@@ -949,7 +1054,7 @@ save_twin_refln.individual_id
 ;
 
      The unique identifier of the twin individual
-     whose Miller indices are given in _twin_refln_index_hkl.
+     whose Miller indices are given in _twin_refln.index_hkl.
      The ID must match a _twin.individual_id in the
      TWIN_INDIVIDUAL category.
 
@@ -959,8 +1064,8 @@ save_twin_refln.individual_id
 ;
     _name.category_id             twin_refln
     _name.object_id               individual_id
-    _name.linked_item_id          '_twin.individual_id'
-    _type.purpose                 Encode
+    _name.linked_item_id          '_twin_individual.id'
+    _type.purpose                 Link
     _type.source                  Assigned
     _type.container               Single
     _type.contents                Code
@@ -971,7 +1076,7 @@ save_
       _dictionary_audit.version
       _dictionary_audit.date
       _dictionary_audit.revision
-         1.0                      2014-02-14
+         1.0.0                    2014-02-14
 ;
         2012-07-25 Created from Victor Young's draft text. JRH
         2012-08-20 Added category definitions and corrected _list for
@@ -1047,7 +1152,7 @@ save_
                    Added r to enumeration list of _twin_refln_include_status.
        2014-02-14  BMcM and NJA: minor editing for clean release version
 ;
-         3.1                      2024-11-21
+         3.1.0                    2024-11-21
 ;
        2014-06-20  Converted to DDLm (SRH/JRH)
        2024-11-21  Examples and history returned to main dictionary (JRH)
