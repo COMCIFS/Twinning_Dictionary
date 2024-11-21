@@ -15,7 +15,8 @@ data_CIF_TWIN
     _dictionary.class             Instance
     _dictionary.version           3.1.0
     _dictionary.date              2024-11-21
-    _dictionary.uri               www.iucr.org/cif/dic/cif_twin.dic
+    _dictionary.uri
+        https://github.com/COMCIFS/Twinning_Dictionary/blob/main/cif_twin.dic
     _dictionary.ddl_conformance   4.2.0
     _dictionary.namespace         CifCore
     _description.text
