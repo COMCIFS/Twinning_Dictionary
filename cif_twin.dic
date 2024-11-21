@@ -14,7 +14,7 @@ data_CIF_TWIN
     _dictionary.title             CIF_TWIN
     _dictionary.class             Instance
     _dictionary.version           3.1
-    _dictionary.date              2024-11-19
+    _dictionary.date              2024-11-21
     _dictionary.uri               www.iucr.org/cif/dic/cif_twin.dic
     _dictionary.ddl_conformance   4.2.0
     _dictionary.namespace         CifCore
@@ -51,7 +51,7 @@ save_TWIN
     _definition.id                TWIN
     _definition.scope             Category
     _definition.class             Set
-    _definition.update            2014-06-20
+    _definition.update            2024-11-21
     _description.text
 ;
 
@@ -563,7 +563,7 @@ save_TWIN_REFLN
     _definition.id                TWIN_REFLN
     _definition.scope             Category
     _definition.class             Loop
-    _definition.update            2014-06-20
+    _definition.update            2024-11-21
     _description.text
 ;
 
@@ -1042,8 +1042,8 @@ save_
                Added r to enumeration list of _twin_refln_include_status.
    2014-02-14  BMcM and NJA: minor editing for clean release version
 ;
-         2.0                      2024-11-19
+         3.1                      2024-11-21
 ;
        2014-06-20  Converted to DDLm (SRH/JRH)
-       2024-11-19  Examples and history returned to main dictionary (JRH)
+       2024-11-21  Examples and history returned to main dictionary (JRH)
 ;
