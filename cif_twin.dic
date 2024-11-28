@@ -942,11 +942,11 @@ save_twin_refln.include_status
 ;
          h
 ;
-         does not satisfy _refine_ls_d_res_high
+         does not satisfy _refine_ls.d_res_high
 ;
          l
 ;
-         does not satisfy _refine_ls_d_res_low
+         does not satisfy _refine_ls.d_res_low
 ;
 
     _enumeration.default          o
