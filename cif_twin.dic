@@ -719,7 +719,7 @@ save_twin_refln.f_squared_calc
      reflection is modelled according to the method of Pratt, Coyle
      and Ibers as follows:
 
-     _twin_refln.F_squared_calc = osf * Sum (mf * _reflnr._F_squared_calc)
+     _twin_refln.F_squared_calc = osf * Sum (mf * _refln.F_squared_calc)
 
      where osf is the overall scale factor,
      mf is the mass fraction,
