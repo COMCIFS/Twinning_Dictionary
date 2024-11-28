@@ -1054,7 +1054,7 @@ save_twin_refln.individual_id
 
      The unique identifier of the twin individual
      whose Miller indices are given in _twin_refln.index_hkl.
-     The ID must match a _twin.individual_id in the
+     The ID must match a _twin_individual.id in the
      TWIN_INDIVIDUAL category.
 
      The list reference includes both _twin_refln.datum_id and
