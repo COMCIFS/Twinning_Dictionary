@@ -736,7 +736,7 @@ save_twin_refln.f_squared_calc
      reflection is modelled according to the method of Pratt, Coyle
      and Ibers as follows:
 
-     _twin_refln.F_squared_calc = osf * Sum (mf * _reflnr._F_squared_calc)
+     _twin_refln.F_squared_calc = osf * Sum (mf * _refln.F_squared_calc)
 
      where osf is the overall scale factor,
      mf is the mass fraction,
@@ -959,11 +959,11 @@ save_twin_refln.include_status
 ;
          h
 ;
-         does not satisfy _refine_ls_d_res_high
+         does not satisfy _refine_ls.d_res_high
 ;
          l
 ;
-         does not satisfy _refine_ls_d_res_low
+         does not satisfy _refine_ls.d_res_low
 ;
 
     _enumeration.default          o
@@ -1071,7 +1071,7 @@ save_twin_refln.individual_id
 
      The unique identifier of the twin individual
      whose Miller indices are given in _twin_refln.index_hkl.
-     The ID must match a _twin.individual_id in the
+     The ID must match a _twin_individual.id in the
      TWIN_INDIVIDUAL category.
 
      The list reference includes both _twin_refln.datum_id and
