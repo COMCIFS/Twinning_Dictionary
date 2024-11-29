@@ -21,7 +21,7 @@ data_CIF_TWIN
     _dictionary.namespace         CifCore
     _description.text
 ;
-    The DICTIONARY group defines the data items used to specify the
+    The DICTIONARY group defines the data items used to specify
     the twinning aspects of crystals in a crystallographic study.
 ;
 
@@ -58,10 +58,10 @@ save_TWIN
      Data items in the TWIN category record general details about
      the nature of the twinning in the sample.
      Terminology for twin dataname definitions was taken directly from:
-     "International Union of Crystallography Commission on Mathematical
-     and Theoretical Crystallography Research themes: Crystal twinning"
+     'International Union of Crystallography Commission on Mathematical
+     and Theoretical Crystallography Research themes: Crystal twinning'
      by Massimo Nespolo, February 3, 2009.
-     http://www.crystallography.fr/mathcryst/twins.htm .
+     https://www.crystallography.fr/mathcryst/twins.htm .
 ;
     _name.category_id             TWIN_GROUP
     _name.object_id               TWIN
@@ -132,7 +132,7 @@ save_TWIN
     (2005), Vol. A].
 
     The TWIN_REFLN loop gives the properties of each diffraction peak
-    (identified by _twin_refln_datum_id) which is indexed
+    (identified by _twin_refln.datum_id) which is indexed
     to both the twin individuals.
 
     In each of the loops shown in this example the first items on a line
@@ -153,7 +153,7 @@ save_twin.dimensionality
 
      The degree of overlap between the twin lattices.
      Most twin lattice symmetry (TLS) and twin lattice quasi-symmetry (TLQS)
-     twins as defined by Donnay and Donnay will be triperiodic.
+     twins as defined by Donnay & Donnay (1974) will be triperiodic.
 
      Reference: Donnay, G. & Donnay, J. D. H. (1974). Can. Mineral. 12, 422-425.
 ;
@@ -252,7 +252,7 @@ save_twin.special_details
 ;
         Individuals 3 and 4 arise from form (I) following an
         enantiotropic phase transition by sudden cooling in
-        a cryostat to 173K.
+        a cryostat to 173 K.
 ;
 
 save_
@@ -382,11 +382,11 @@ save_twin_individual.twin_matrix
 
      The matrix U that multiplies the Miller indices h,k,l
      of the reference twin to give the Miller indices h',k',l',
-     of the twin specified by _twin_individual_id
+     of the twin specified by _twin_individual.id .
 
-                         | U11  U12  U13 | |h |
-            (h' k' l') = | U21  U22  U23 | |k |
-                         | U31  U32  U33 | |l |
+             | U11  U12  U13 | |h |   | h' |
+             | U21  U22  U23 | |k | = | k' |
+             | U31  U32  U33 | |l |   | l' |
 
      The reference twin must be assigned the identity matrix.
 ;
@@ -683,15 +683,18 @@ save_TWIN_REFLN
 ;
          This example is taken from Colombo Young & Gladfelter
          [Inorg. Chem. (2000), 39, 4621-4624].
+
          Two structures of nitronium tetranitratogallate
          are reported as a result of an enantiotropic phase transition.
          The higher-temperature phase is in the tetragonal space group I-4,
          while the lower-temperature phase is a twin by non-merohedry
          in space group I2.
-         The individuals are enantiomorphic as a result of the phase transition.
-         In the listing it is clear that datums 620-624 do not contain
-         overlapping reflections, whereas datums 625-629 contain contributions
-         from both twins.
+
+         The individuals are enantiomorphic as a result of the phase
+         transition.  In the listing it is clear that reflections with
+         _twin_refln.datum_id 620-624 do not contain overlapping
+         reflections, whereas those with _twin_refln.datum_id 625-629
+         contain contributions from both twins.
 ;
 
 save_
@@ -733,7 +736,7 @@ save_twin_refln.f_squared_calc
 
      Calculated value for the overall squared structure factors (in
      electrons squared for X-ray diffraction) arising from all
-     the twin contributions to the peak defined by _twin_refln_datum_id.
+     the twin contributions to the peak defined by _twin_refln.datum_id.
      The total contribution from all twins to a single observed
      reflection is modelled according to the method of Pratt, Coyle
      and Ibers as follows:
@@ -924,7 +927,6 @@ save_twin_refln.include_status
     _definition.update            2014-06-20
     _description.text
 ;
-
      A symbol indicating how the reflection is treated during refinement.
 ;
     _name.category_id             twin_refln
@@ -939,12 +941,15 @@ save_twin_refln.include_status
       _enumeration_set.detail
          o
 ;
-         (lower-case letter o for 'observed') satisfies _refine_ls.d_res_high
-         satisfies _refine_ls.d_res_low exceeds _reflns.threshold_expression
+         (lower-case letter o for 'observed')
+         satisfies _refine_ls.d_res_high
+         satisfies _refine_ls.d_res_low
+         exceeds _reflns.threshold_expression
 ;
          <
 ;
-         satisfies _refine_ls.d_res_high satisfies _refine_ls.d_res_low
+         satisfies _refine_ls.d_res_high
+         satisfies _refine_ls.d_res_low
          does not exceed _reflns.threshold_expression
 ;
          -
@@ -1176,5 +1181,7 @@ save_
        2024-11-21  Examples and history returned to main dictionary (JRH)
        2024-11-28  Redeclared _twin_individual.mass_fraction_refined as a
                    measurand (AV)
-       2024-11-29  Fix and improve text formatting in several definitions.
+       2024-11-29  Fix and improve text formatting in several definitions (JRH).
+                   Further fix and improve text formatting and correct some
+		   typos/style points (BMcM).
 ;
