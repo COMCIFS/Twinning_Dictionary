@@ -14,7 +14,7 @@ data_CIF_TWIN
     _dictionary.title             CIF_TWIN
     _dictionary.class             Instance
     _dictionary.version           3.1.0
-    _dictionary.date              2024-11-21
+    _dictionary.date              2024-11-28
     _dictionary.uri
         https://github.com/COMCIFS/Twinning_Dictionary/blob/main/cif_twin.dic
     _dictionary.ddl_conformance   4.2.0
@@ -312,12 +312,29 @@ save_twin_individual.mass_fraction_refined
 ;
     _name.category_id             twin_individual
     _name.object_id               mass_fraction_refined
-    _type.purpose                 Number
+    _type.purpose                 Measurand
     _type.source                  Derived
     _type.container               Single
     _type.contents                Real
     _enumeration.range            0:1.0
     _units.code                   none
+
+save_
+
+save_twin_individual.mass_fraction_refined_su
+
+    _definition.id                '_twin_individual.mass_fraction_refined_su'
+    _definition.update            2024-11-28
+    _description.text
+;
+    Standard uncertainty of _twin_individual.mass_fraction_refined.
+;
+    _name.category_id             twin_individual
+    _name.object_id               mass_fraction_refined_su
+    _name.linked_item_id          '_twin_individual.mass_fraction_refined'
+    _units.code                   none
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
 
 save_
 
@@ -1151,8 +1168,10 @@ save_
                    Added r to enumeration list of _twin_refln_include_status.
        2014-02-14  BMcM and NJA: minor editing for clean release version
 ;
-         3.1.0                    2024-11-21
+         3.1.0                    2024-11-28
 ;
        2014-06-20  Converted to DDLm (SRH/JRH)
        2024-11-21  Examples and history returned to main dictionary (JRH)
+       2024-11-28  Redeclared _twin_individual.mass_fraction_refined as a
+                   measurand (AV)
 ;
