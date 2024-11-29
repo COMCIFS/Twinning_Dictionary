@@ -388,7 +388,6 @@ save_twin_individual.twin_matrix
             (h' k' l') = | U21  U22  U23 | |k |
                          | U31  U32  U33 | |l |
 
-
      The reference twin must be assigned the identity matrix.
 ;
     _name.category_id             twin_individual
