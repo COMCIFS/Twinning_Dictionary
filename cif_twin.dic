@@ -99,7 +99,7 @@ save_TWIN
        _twin_refln.index_l
        _twin_refln.F_squared_calc
        _twin_refln.F_squared_meas
-       _twin_refln.F_squared_sigma
+       _twin_refln.F_squared_meas_su
        _twin_refln.include_status
           1    1  -1   1 -32     40.17     55.86      7.39 o
           1    2   1  -1  32     40.17     55.86      7.39 o
@@ -625,7 +625,7 @@ save_TWIN_REFLN
           _twin_refln.index_k
           _twin_refln.index_l
           _twin_refln.F_squared_meas
-          _twin_refln.F_squared_sigma
+          _twin_refln.F_squared_meas_su
           _twin_refln.include_status
 
         1  1   1   0   0             1.03      0.18 o
@@ -661,7 +661,7 @@ save_TWIN_REFLN
           _twin_refln.index_l
           _twin_refln.F_squared_calc
           _twin_refln.F_squared_meas
-          _twin_refln.F_squared_sigma
+          _twin_refln.F_squared_meas_su
           _twin_refln.include_status
 
         620   1   1  -6  -3      200.22      207.88      3.35 o
