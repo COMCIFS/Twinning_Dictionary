@@ -65,7 +65,7 @@ save_TWIN
      by Massimo Nespolo, February 3, 2009.
      https://www.crystallography.fr/mathcryst/twins.htm .
 ;
-    _name.category_id             TWIN_GROUP
+    _name.category_id             CIF_TWIN_HEAD
     _name.object_id               TWIN
     _description_example.case
 ;
