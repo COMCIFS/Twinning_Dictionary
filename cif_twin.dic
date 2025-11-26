@@ -1,4 +1,5 @@
 #\#CIF_2.0
+# SPDX-License-Identifier: CC-BY-4.0
 ##############################################################################
 #                                                                            #
 #                    CIF Twinning Dictionary                                 #
@@ -14,7 +15,7 @@ data_CIF_TWIN
     _dictionary.title             CIF_TWIN
     _dictionary.class             Instance
     _dictionary.version           3.1.0
-    _dictionary.date              2024-11-29
+    _dictionary.date              2025-11-24
     _dictionary.uri
         https://github.com/COMCIFS/Twinning_Dictionary/blob/main/cif_twin.dic
     _dictionary.ddl_conformance   4.2.0
@@ -25,19 +26,20 @@ data_CIF_TWIN
     the twinning aspects of crystals in a crystallographic study.
 ;
 
-save_TWIN_GROUP
+save_CIF_TWIN_HEAD
 
-    _definition.id                TWIN_GROUP
+    _definition.id                CIF_TWIN_HEAD
     _definition.scope             Category
     _definition.class             Head
-    _definition.update            2024-05-15
+    _definition.update            2025-11-24
     _description.text
 ;
-     The TWIN_GROUP data items describe atomic information
-     used in crystallographic structure studies.
+     The CIF_TWIN_HEAD category is the top-level category for all categories
+     in the CIF_TWIN dictionary.  Definitions in this dictionary are used to
+     describe crystal twinning.
 ;
     _name.category_id             CIF_TWIN
-    _name.object_id               TWIN_GROUP
+    _name.object_id               CIF_TWIN_HEAD
 
     _import.get
         [
@@ -63,7 +65,7 @@ save_TWIN
      by Massimo Nespolo, February 3, 2009.
      https://www.crystallography.fr/mathcryst/twins.htm .
 ;
-    _name.category_id             TWIN_GROUP
+    _name.category_id             CIF_TWIN_HEAD
     _name.object_id               TWIN
     _description_example.case
 ;
@@ -1175,7 +1177,7 @@ save_
                    Added r to enumeration list of _twin_refln_include_status.
        2014-02-14  BMcM and NJA: minor editing for clean release version
 ;
-         3.1.0                    2024-11-29
+         3.1.0                    2025-11-24
 ;
        2014-06-20  Converted to DDLm (SRH/JRH)
        2024-11-21  Examples and history returned to main dictionary (JRH)
@@ -1184,4 +1186,5 @@ save_
        2024-11-29  Fix and improve text formatting in several definitions (JRH).
                    Further fix and improve text formatting and correct some
                    typos/style points (BMcM).
+       2025-11-24  Changed Head category name for this dictionary (BMcM).
 ;
